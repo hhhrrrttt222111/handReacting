@@ -1,0 +1,27 @@
+.header {
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    background: #333333;
+    height: 60px;
+}
+
+.headerLeft > h3 {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-family: 'Bad Script', cursive;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+}
+
+.headerRight > a {
+    text-decoration: none;
+    color: white;
+    
+}
+
+
+.headerRight > a > .MuiSvgIcon-root{
+    margin-top: 0.5rem;
+    font-size: 2rem;
+}
