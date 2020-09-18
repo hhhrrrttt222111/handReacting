@@ -1,0 +1,19 @@
+.info {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info > h1 {
+    padding: 1rem;
+    font-family: 'Euphoria Script', cursive;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+.info > h3 {
+    font-weight: 600;
+    font-family: cursive;
+}

@@ -12,7 +12,7 @@ function Header() {
                 <h3>HandReacting</h3>
             </div>
             <div className="headerRight">
-                <a href='https://reactrouter.com/web/api/Link' target="_blank" rel="noopener noreferrer">
+                <a href='https://github.com/hhhrrrttt222111/handReacting' target="_blank" rel="noopener noreferrer">
                     <GitHubIcon />
                 </a>
             </div>

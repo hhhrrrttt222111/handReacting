@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { SketchPicker } from 'react-color'
+import { SketchPicker, CirclePicker } from 'react-color'
 import domtoimage from 'dom-to-image';
-import { Paper, Button, MenuItem, Select, FormControl, InputLabel, Slider, FormControlLabel, Switch } from '@material-ui/core'
+import { Paper, Button, MenuItem, Select, FormControl, InputLabel, Slider, FormControlLabel, Switch, colors } from '@material-ui/core'
 
 import './FontConverter.css'
 import './fonts.css'
@@ -13,13 +13,17 @@ function FontConverter() {
     const [fontFamily, setFontFamily] = useState("'Beth Ellen', cursive")
     const [fontSize, setFontSize] = useState(20)
     const [color, setColor] = useState('blue')
+    const [pageColor, setPageColor] = useState('white')
     const [letterSpacing, setLetterSpacing] = useState(1)
     const [wordSpacing, setWordSpacing] = useState(1)
     const [lineHeight, setLineHeight] = useState(30)
     const [fontWeight, setFontWeight] = useState(300)
     const [line, setLine] = useState(false)
 
-    const [showColorPicker, setShowColorPicker] = useState(false)
+    const [showColorPicker1, setShowColorPicker1] = useState(false)
+    const [showColorPicker2, setShowColorPicker2] = useState(false)
+
+    const colorList = ['#ffffff', '#f2f2f2', '#e6e6e6', '#d9d9d9', '#cccccc', '#bfbfbf', '#ffffe6', ' #ffffcc', '#ffffb3', '#ffff99', '#e6ffff', '#e6ffe6']
 
 
     const handleLineHeight = (event, newValue) => {
@@ -39,7 +43,7 @@ function FontConverter() {
         domtoimage.toJpeg(document.getElementById('page'), { quality: 1 })
         .then(function (dataUrl) {
             var link = document.createElement('a');
-            link.download = 'my-image-name.jpeg';
+            link.download = 'download.jpeg';
             link.href = dataUrl;
             link.click();
         });
@@ -49,9 +53,9 @@ function FontConverter() {
         <div className="fontConverter">
             <div className="fontStyler">
                 <div className="input_container">
-                    <Paper elevation={3} className="paper" >
+                    <Paper elevation={3} className="paper_input" >
                         <textarea onChange={e => setText(e.target.value)} 
-                            className="inputTextField" cols='46' rows='27'>
+                            className="inputTextField" cols='36' rows='19'>
                             {text}
                         </textarea>
                     </Paper>
@@ -153,14 +157,15 @@ function FontConverter() {
                             </div>
                         </div>
 
+                        <div className="gridTwo">
                             <div className="colorButton">
-                                <Button style={{backgroundColor: `${color}`}} onClick={() => setShowColorPicker(showColorPicker => !showColorPicker)} variant="contained" color="primary">
-                                    {showColorPicker ? 'Close ' : 'Font Color'}
+                                <Button style={{backgroundColor: `${color}`}} onClick={() => setShowColorPicker1(showColorPicker => !showColorPicker)} variant="contained" color="primary">
+                                    {showColorPicker1 ? 'Close ' : 'Font Color'}
                                 </Button>
                             </div>
                             <div className="colorPicker">
                                 {
-                                    showColorPicker && (
+                                    showColorPicker1 && (
                                         <SketchPicker 
                                             color={color}
                                             onChange={targetColor => setColor(targetColor.hex)}
@@ -168,6 +173,24 @@ function FontConverter() {
                                     )
                                 }
                             </div>
+
+                            <div className="colorButton">
+                                <Button style={{backgroundColor: `${pageColor}`, color: 'black'}} onClick={() => setShowColorPicker2(showColorPicker => !showColorPicker)} variant="contained" color="primary">
+                                    {showColorPicker2 ? 'Close ' : 'Page Color'}
+                                </Button>
+                            </div>
+                            <div className="colorPicker">
+                                {
+                                    showColorPicker2 && (
+                                        <CirclePicker
+                                            colors={colorList} 
+                                            color={pageColor}
+                                            onChange={targetColor => setPageColor(targetColor.hex)}
+                                        />
+                                    )
+                                }
+                            </div>
+                        </div>
                         
 
                         <div className="gridThree">
@@ -179,6 +202,10 @@ function FontConverter() {
                                     labelId="letterSpacing-label"
                                     onChange={e => setLetterSpacing(e.target.value)}
                                     >
+                                    <MenuItem value={-2}>-2</MenuItem>
+                                    <MenuItem value={-1.5}>-1.5</MenuItem>
+                                    <MenuItem value={-1}>-1</MenuItem>
+                                    <MenuItem value={-0.5}>-0.5</MenuItem>
                                     <MenuItem value={0}>0</MenuItem>
                                     <MenuItem value={0.5}>0.5</MenuItem>
                                     <MenuItem value={1}>1</MenuItem>
@@ -198,13 +225,18 @@ function FontConverter() {
                                     labelId="wordSpacing-label"
                                     onChange={e => setWordSpacing(e.target.value)}
                                     >
+                                    <MenuItem value={-4}>-4</MenuItem>
+                                    <MenuItem value={-3}>-3</MenuItem>
+                                    <MenuItem value={-2}>-2</MenuItem>
+                                    <MenuItem value={-1}>-1</MenuItem>
                                     <MenuItem value={0}>0</MenuItem>
                                     <MenuItem value={0.5}>0.5</MenuItem>
                                     <MenuItem value={1}>1</MenuItem>
-                                    <MenuItem value={1.5}>1.5</MenuItem>
                                     <MenuItem value={2}>2</MenuItem>
                                     <MenuItem value={3}>3</MenuItem>
                                     <MenuItem value={4}>4</MenuItem>
+                                    <MenuItem value={5}>6</MenuItem>
+                                    <MenuItem value={6}>8</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>
@@ -220,7 +252,8 @@ function FontConverter() {
                         
                 </div>
                 <div className="output_container">
-                    <Paper elevation={3} square={true} className="paper" id="page" style={{backgroundImage: line? 'repeating-linear-gradient(white 0px, white 24px, #333333 25px)' : 'none'}}>
+                    <Paper elevation={3} square={true} className="paper" id="page" style={{backgroundImage: 
+                            line? 'repeating-linear-gradient(transparent 0px, transparent 24px, #333333 25px)' : 'none', backgroundColor: `${pageColor}`}}>
                         <p className="output_text" 
                             style={{fontFamily: `${fontFamily}`, fontSize: `${fontSize}px`, color: `${color}`, 
                                 letterSpacing: `${letterSpacing}px`, wordSpacing: `${wordSpacing}px`, lineHeight: `${lineHeight}px`, 
@@ -229,7 +262,7 @@ function FontConverter() {
                         </p>
                     </Paper>
                     <div className="download_button">
-                        <Button onClick={generateJpeg} color="primary" variant="contained">Download Image </Button>
+                        <Button onClick={generateJpeg} variant="contained" style={{color: 'white', backgroundColor: '#cc0099'}}>Download Image </Button>
                     </div>
                 </div>
             </div>

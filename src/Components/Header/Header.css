@@ -1,6 +1,7 @@
 .header {
     margin-bottom: 2rem;
     padding-top: 1.5rem;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     background: #333333;
