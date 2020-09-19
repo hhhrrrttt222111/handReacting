@@ -9,7 +9,9 @@
 
 .input_container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .paper {
     width: 460px;
@@ -23,6 +25,14 @@
     height: 400px;
     padding: 1rem;
     overflow: hidden;   
+    background-image: linear-gradient(to right, #EDE574 0%, #E1F5C4 51%, #EDE574 100%) !important;
+}
+textarea {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: transparent;
 }
 
 .paper_input::-webkit-scrollbar {
@@ -36,12 +46,6 @@ textarea::-webkit-scrollbar {
     scrollbar-width: none; 
 }
 
-textarea {
-    font-size: 18px;
-    outline: none;
-    border: none;
-    resize: none;
-}
 
 .output_container {
     display: flex;
@@ -54,8 +58,12 @@ textarea {
 .output_text {
     word-wrap: break-word;
     padding-top: 2rem;
-    
+    height: 100%;
+    position: relative;
+    left: 2rem;
 }
+
+
 
 .font_selector {
     display: flex;
@@ -74,14 +82,22 @@ textarea {
     justify-content: space-around;
 }
 
+.MuiSlider-colorPrimary {
+    color: #ec4c4c !important;
+    size: 3rem;
+}
+
+.MuiSwitch-colorPrimary {
+    color: #ec4c4c !important;
+}
+
 .colorButton {
-    padding: 1rem;
+    padding-bottom: 2rem;
 }
 
 .download_button {
     margin-top: 2rem;
 }
-
 
 
 
@@ -117,7 +133,7 @@ textarea {
         margin: 5px;   
     }
     .paper_input {
-        width: 100%;
+        width: 90%;
     }
     .font_selector {
         margin-top: 0.5rem;

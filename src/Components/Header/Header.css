@@ -8,11 +8,10 @@
     height: 60px;
 }
 
-.headerLeft > h3 {
-    color: #FFFFFF;
-    font-size: 28px;
-    font-family: 'Bad Script', cursive;
-    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+.headerLeft > img {
+    position: absolute;
+    top: 10px;
+    width: 70px;
 }
 
 .headerRight > a {

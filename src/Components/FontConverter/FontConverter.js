@@ -1,17 +1,20 @@
 import React, {useState} from 'react'
 import { SketchPicker, CirclePicker } from 'react-color'
 import domtoimage from 'dom-to-image';
-import { Paper, Button, MenuItem, Select, FormControl, InputLabel, Slider, FormControlLabel, Switch, colors } from '@material-ui/core'
+import Fade from '@material-ui/core/Fade';
+import { Paper, Button, MenuItem, Select, FormControl, InputLabel, Slider, FormControlLabel, Switch, Tooltip } from '@material-ui/core'
 
 import './FontConverter.css'
 import './fonts.css'
+
+import Usage from '../Usage/Usage';
 
 
 function FontConverter() {
 
     const [text, setText] = useState("A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a young boy's shoulders to let him know that the world hadn't ended.")
     const [fontFamily, setFontFamily] = useState("'Beth Ellen', cursive")
-    const [fontSize, setFontSize] = useState(20)
+    const [fontSize, setFontSize] = useState(17)
     const [color, setColor] = useState('blue')
     const [pageColor, setPageColor] = useState('white')
     const [letterSpacing, setLetterSpacing] = useState(1)
@@ -19,6 +22,8 @@ function FontConverter() {
     const [lineHeight, setLineHeight] = useState(30)
     const [fontWeight, setFontWeight] = useState(300)
     const [line, setLine] = useState(false)
+    const [shadow, setShadow] = useState(false)
+    const [margin, setMargin] = useState(false)
 
     const [showColorPicker1, setShowColorPicker1] = useState(false)
     const [showColorPicker2, setShowColorPicker2] = useState(false)
@@ -38,6 +43,13 @@ function FontConverter() {
         setLine(!line);
       };
 
+    const handleShadow = (event) => {
+    setShadow(!shadow);
+    };
+
+    const handleMargin = (event) => {
+        setMargin(!margin);
+        };
 
     const generateJpeg = () => {
         domtoimage.toJpeg(document.getElementById('page'), { quality: 1 })
@@ -53,18 +65,21 @@ function FontConverter() {
         <div className="fontConverter">
             <div className="fontStyler">
                 <div className="input_container">
-                    <Paper elevation={3} className="paper_input" >
+                    <Paper elevation={15} className="paper_input" >
                         <textarea onChange={e => setText(e.target.value)} 
                             className="inputTextField" cols='36' rows='19'>
                             {text}
                         </textarea>
                     </Paper>
+                    <div className="usageButton">
+                        <Usage />
+                    </div>
                 </div>
                 <div className="font_selector">
                 {/* <h2>Select Styles</h2> */}
                 <div className="gridOne">
                     <div className="fontFamily" style={{marginBottom: "1.5rem"}}>
-                            <FormControl style={{minWidth: 120}}>
+                            <FormControl style={{minWidth: 150}}>
                             <InputLabel id="font-label">Fonts</InputLabel>
                             <Select
                                     labelId="font-label"
@@ -108,13 +123,15 @@ function FontConverter() {
                                 </FormControl>
                         </div>
                         <div className="fontSize" style={{marginBottom: "1.5rem"}}>
-                        <FormControl style={{minWidth: 120}}>
-                                <InputLabel id="fontSize-label">Font Size</InputLabel>
+                            <FormControl style={{minWidth: 150}}>
+                                <InputLabel id="fontSize-label" >Font Size</InputLabel>
                                 <Select
                                 value={fontSize}
                                 labelId="fontSize-label"
                                 onChange={e => setFontSize(e.target.value)}
                                 >
+                                <MenuItem value={14}>14</MenuItem>
+                                <MenuItem value={15}>15</MenuItem>
                                 <MenuItem value={16}>16</MenuItem>
                                 <MenuItem value={17}>17</MenuItem>
                                 <MenuItem value={18}>18</MenuItem>
@@ -130,7 +147,7 @@ function FontConverter() {
 
                             <div className="fontWeight" style={{marginBottom: "1.5rem"}}>
                                 <InputLabel id="fontWeight">Font Weight</InputLabel>
-                                <Slider style={{width: 120}}
+                                <Slider style={{width: 150}}
                                     defaultValue={200}
                                     value={fontWeight}
                                     aria-labelledby="discrete-slider"
@@ -142,19 +159,54 @@ function FontConverter() {
                                 />
                             </div>
 
-                            <div className="lineHeight" style={{marginBottom: "1.5rem"}}>
-                                <InputLabel id="lineHeight">Line Height</InputLabel>
-                                <Slider style={{width: 120}}
-                                    defaultValue={30}
-                                    value={lineHeight}
-                                    aria-labelledby="discrete-slider"
-                                    valueLabelDisplay="auto"
-                                    onChange={handleLineHeight}
-                                    step={1}
-                                    min={10}
-                                    max={70}
-                                />
+                            <div className="letterSpacing" style={{marginBottom: "1.5rem"}}>
+                                <FormControl style={{minWidth: 150}}>
+                                    <InputLabel id="letterSpacing-label">Letter Spacing</InputLabel>
+                                    <Select
+                                    value={letterSpacing}
+                                    labelId="letterSpacing-label"
+                                    onChange={e => setLetterSpacing(e.target.value)}
+                                    >
+                                    <MenuItem value={-2}>-2</MenuItem>
+                                    <MenuItem value={-1.5}>-1.5</MenuItem>
+                                    <MenuItem value={-1}>-1</MenuItem>
+                                    <MenuItem value={-0.5}>-0.5</MenuItem>
+                                    <MenuItem value={0}>0</MenuItem>
+                                    <MenuItem value={0.5}>0.5</MenuItem>
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={1.5}>1.5</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                    <MenuItem value={4}>4</MenuItem>
+                                    </Select>
+                                </FormControl>
                             </div>
+
+                            <div className="wordSpacing" style={{marginBottom: "1.5rem"}}>
+                                <FormControl style={{minWidth: 150}}>
+                                    <InputLabel id="wordSpacing-label">Word Spacing</InputLabel>
+                                    <Select
+                                    value={wordSpacing}
+                                    labelId="wordSpacing-label"
+                                    onChange={e => setWordSpacing(e.target.value)}
+                                    >
+                                    <MenuItem value={-4}>-4</MenuItem>
+                                    <MenuItem value={-3}>-3</MenuItem>
+                                    <MenuItem value={-2}>-2</MenuItem>
+                                    <MenuItem value={-1}>-1</MenuItem>
+                                    <MenuItem value={0}>0</MenuItem>
+                                    <MenuItem value={0.5}>0.5</MenuItem>
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                    <MenuItem value={4}>4</MenuItem>
+                                    <MenuItem value={5}>6</MenuItem>
+                                    <MenuItem value={6}>8</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+
                         </div>
 
                         <div className="gridTwo">
@@ -194,58 +246,46 @@ function FontConverter() {
                         
 
                         <div className="gridThree">
-                            <div className="letterSpacing" style={{marginBottom: "1.5rem"}}>
-                                <FormControl style={{minWidth: 120}}>
-                                    <InputLabel id="letterSpacing-label">Letter Spacing</InputLabel>
-                                    <Select
-                                    value={letterSpacing}
-                                    labelId="letterSpacing-label"
-                                    onChange={e => setLetterSpacing(e.target.value)}
-                                    >
-                                    <MenuItem value={-2}>-2</MenuItem>
-                                    <MenuItem value={-1.5}>-1.5</MenuItem>
-                                    <MenuItem value={-1}>-1</MenuItem>
-                                    <MenuItem value={-0.5}>-0.5</MenuItem>
-                                    <MenuItem value={0}>0</MenuItem>
-                                    <MenuItem value={0.5}>0.5</MenuItem>
-                                    <MenuItem value={1}>1</MenuItem>
-                                    <MenuItem value={1.5}>1.5</MenuItem>
-                                    <MenuItem value={2}>2</MenuItem>
-                                    <MenuItem value={3}>3</MenuItem>
-                                    <MenuItem value={4}>4</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </div>
-
-                            <div className="wordSpacing" style={{marginBottom: "1.5rem"}}>
-                                <FormControl style={{minWidth: 120}}>
-                                    <InputLabel id="wordSpacing-label">Word Spacing</InputLabel>
-                                    <Select
-                                    value={wordSpacing}
-                                    labelId="wordSpacing-label"
-                                    onChange={e => setWordSpacing(e.target.value)}
-                                    >
-                                    <MenuItem value={-4}>-4</MenuItem>
-                                    <MenuItem value={-3}>-3</MenuItem>
-                                    <MenuItem value={-2}>-2</MenuItem>
-                                    <MenuItem value={-1}>-1</MenuItem>
-                                    <MenuItem value={0}>0</MenuItem>
-                                    <MenuItem value={0.5}>0.5</MenuItem>
-                                    <MenuItem value={1}>1</MenuItem>
-                                    <MenuItem value={2}>2</MenuItem>
-                                    <MenuItem value={3}>3</MenuItem>
-                                    <MenuItem value={4}>4</MenuItem>
-                                    <MenuItem value={5}>6</MenuItem>
-                                    <MenuItem value={6}>8</MenuItem>
-                                    </Select>
-                                </FormControl>
+                            <div className="lineHeight" style={{marginBottom: "1.5rem"}}>
+                                <InputLabel id="lineHeight">Line Height</InputLabel>
+                                <Slider style={{width: 150}}
+                                    defaultValue={30}
+                                    value={lineHeight}
+                                    aria-labelledby="discrete-slider"
+                                    valueLabelDisplay="auto"
+                                    onChange={handleLineHeight}
+                                    step={1}
+                                    min={10}
+                                    max={70}
+                                    color="primary"
+                                />
                             </div>
 
                             <div className="linesCheckbox">
-                            <FormControlLabel
-                                control={<Switch checked={line} onChange={handlePageLines} name="lines" />}
-                                label="Page Lines"
-                            />
+                                <Tooltip title="Add Page Lines" placement="right" TransitionComponent={Fade} arrow>
+                                    <FormControlLabel
+                                        control={<Switch checked={line} onChange={handlePageLines} name="lines" color="primary"/>}
+                                        label="Page Lines"
+                                    />
+                                </Tooltip>
+                            </div>
+
+                            <div className="shadowCheckbox">
+                                <Tooltip title="Add Shadow To Paper" placement="left" TransitionComponent={Fade} arrow>
+                                    <FormControlLabel
+                                        control={<Switch checked={shadow} onChange={handleShadow} name="shadow" color="primary"/>}
+                                        label="Scan Effect"
+                                    />
+                                </Tooltip>
+                            </div>
+
+                            <div className="marginCheckbox">
+                                <Tooltip title="Insert Margin" placement="right" TransitionComponent={Fade} arrow>
+                                    <FormControlLabel
+                                        control={<Switch checked={margin} onChange={handleMargin} name="shadow" color="primary"/>}
+                                        label="Page Margin"
+                                    />
+                                </Tooltip>
                             </div>
                             
                         </div>
@@ -253,16 +293,18 @@ function FontConverter() {
                 </div>
                 <div className="output_container">
                     <Paper elevation={3} square={true} className="paper" id="page" style={{backgroundImage: 
-                            line? 'repeating-linear-gradient(transparent 0px, transparent 24px, #333333 25px)' : 'none', backgroundColor: `${pageColor}`}}>
+                            line? 'repeating-linear-gradient(transparent 0px, transparent 24px, #333333 25px)' : 'none', backgroundColor: `${pageColor}`,
+                            WebkitBoxShadow: shadow ? 'inset 18px 0px 50px -7px rgba(106,110,101,1)' : 'none', MozBoxShadow: shadow ? 'inset 18px 0px 50px -7px rgba(106,110,101,1)' : 'none',
+                            boxShadow: shadow ? 'inset 18px 0px 50px -7px rgba(106,110,101,1)' : 'none'}}>
                         <p className="output_text" 
                             style={{fontFamily: `${fontFamily}`, fontSize: `${fontSize}px`, color: `${color}`, 
                                 letterSpacing: `${letterSpacing}px`, wordSpacing: `${wordSpacing}px`, lineHeight: `${lineHeight}px`, 
-                                fontWeight: `${fontWeight}`}}>
+                                fontWeight: `${fontWeight}`, borderLeft: margin? '2px solid #444444' : 'none', left: margin? '2rem' : '0', borderLeft: margin? '2px solid #666666' : 'none', paddingLeft: margin? '0.5rem' : '0'}}>
                             {text}
                         </p>
                     </Paper>
                     <div className="download_button">
-                        <Button onClick={generateJpeg} variant="contained" style={{color: 'white', backgroundColor: '#cc0099'}}>Download Image </Button>
+                        <Button onClick={generateJpeg} variant="contained" style={{color: 'white', backgroundColor: '#ec4c4c'}}>Download Image </Button>
                     </div>
                 </div>
             </div>
