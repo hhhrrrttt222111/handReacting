@@ -57,7 +57,6 @@ textarea::-webkit-scrollbar {
 
 .output_text {
     word-wrap: break-word;
-    padding-top: 2rem;
     height: 100%;
     position: relative;
     left: 2rem;

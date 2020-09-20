@@ -12,7 +12,7 @@ import Usage from '../Usage/Usage';
 
 function FontConverter() {
 
-    const [text, setText] = useState("A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a young boy's shoulders to let him know that the world hadn't ended.")
+    const [text, setText] = useState("A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a young boy's shoulders to let him know that the world hadn't ended. This is a sample text. Enter your text here to convert to handwritten font.")
     const [fontFamily, setFontFamily] = useState("'Beth Ellen', cursive")
     const [fontSize, setFontSize] = useState(17)
     const [color, setColor] = useState('blue')
@@ -24,6 +24,7 @@ function FontConverter() {
     const [line, setLine] = useState(false)
     const [shadow, setShadow] = useState(false)
     const [margin, setMargin] = useState(false)
+    const [marginTop, setMarginTop] = useState(false)
 
     const [showColorPicker1, setShowColorPicker1] = useState(false)
     const [showColorPicker2, setShowColorPicker2] = useState(false)
@@ -49,7 +50,11 @@ function FontConverter() {
 
     const handleMargin = (event) => {
         setMargin(!margin);
-        };
+    };
+
+    const handleMarginTop = (event) => {
+        setMarginTop(!marginTop);
+    };
 
     const generateJpeg = () => {
         domtoimage.toJpeg(document.getElementById('page'), { quality: 1 })
@@ -287,6 +292,15 @@ function FontConverter() {
                                     />
                                 </Tooltip>
                             </div>
+
+                            <div className="marginTopCheckbox">
+                                <Tooltip title="Give Top Margin" placement="right" TransitionComponent={Fade} arrow>
+                                    <FormControlLabel
+                                        control={<Switch checked={marginTop} onChange={handleMarginTop} name="shadow" color="primary"/>}
+                                        label="Top Space"
+                                    />
+                                </Tooltip>
+                            </div>
                             
                         </div>
                         
@@ -298,8 +312,8 @@ function FontConverter() {
                             boxShadow: shadow ? 'inset 18px 0px 50px -7px rgba(106,110,101,1)' : 'none'}}>
                         <p className="output_text" 
                             style={{fontFamily: `${fontFamily}`, fontSize: `${fontSize}px`, color: `${color}`, 
-                                letterSpacing: `${letterSpacing}px`, wordSpacing: `${wordSpacing}px`, lineHeight: `${lineHeight}px`, 
-                                fontWeight: `${fontWeight}`, borderLeft: margin? '2px solid #444444' : 'none', left: margin? '2rem' : '0', borderLeft: margin? '2px solid #666666' : 'none', paddingLeft: margin? '0.5rem' : '0'}}>
+                                letterSpacing: `${letterSpacing}px`, wordSpacing: `${wordSpacing}px`, lineHeight: `${lineHeight}px`, paddingTop: marginTop? '2rem' : '0',
+                                fontWeight: `${fontWeight}`, left: margin? '2rem' : '0', borderLeft: margin? '2px solid #666666' : 'none', paddingLeft: margin? '0.5rem' : '0'}}>
                             {text}
                         </p>
                     </Paper>

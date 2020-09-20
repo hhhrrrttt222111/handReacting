@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lobster+Two&display=swap');
 
 .info {
     margin: 2rem;
@@ -36,8 +36,13 @@
 
 .info_about > p {
     flex: 0.5;
-    font-size: 20px;
-    padding: 2rem;
+    font-size: 23px;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 9rem;
+    font-weight: 100;
+    word-spacing: 2px;
+    font-family: 'Lobster Two', cursive;
 }
 
 .info_image > img {
@@ -71,5 +76,9 @@
     
     .info_about  {
         flex: 1;
+    }
+    .info_about > p {
+        font-size: 18px;
+        padding: 1.5rem;
     }
   }

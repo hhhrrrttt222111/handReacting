@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Info />
         <FontConverter />
-        {/* <Footer /> */}
+        <Footer />
     </div>
   );
 }

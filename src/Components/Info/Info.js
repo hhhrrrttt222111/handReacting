@@ -11,10 +11,9 @@ function Info() {
                 <h3><span>H</span>and<span>R</span>eacting</h3>
                 <p>
                     <ImPen className="penIcon"/>
-                A hero can be anyone. Even a man doing something as simple and reassuring as 
-                putting a coat around a young boy's shoulders to let him know that the world hadn't ended.
-                A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a
-                young boy's shoulders to let him know that the world hadn't ended.
+                    Are you tired and fed up of the multitude of written assignments that you have to submit?
+                    HandReacting is the PERFECT solution to all your problems. It converts typed documents into handwritten ones, saving you a hella lotta time. While you are at it, go ahead and have fun with all the fonts and effects. 
+                    
                     <ImPen className="penIcon"/>
                 </p>
             </div>
