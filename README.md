@@ -1,6 +1,5 @@
 <p align="center">
 <img alt="Text-to-handwriting title image" src="./src/media/mainlogo.png" width="250px" />
-  
 </p>
 
 [![GitHub stars](https://img.shields.io/github/stars/hhhrrrttt222111/handReacting?color=ff69b4&style=flatsquare)](https://github.com/hhhrrrttt222111/handReacting/stargazers)
@@ -12,5 +11,8 @@
 <br >
 
 
+<p align="center">
+<img alt="Text-to-handwriting title image" src="./src/media/read.png" width="250px" />
+</p>
 
 
