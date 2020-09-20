@@ -8,11 +8,15 @@
 ### Are you tired and fed up of the multitude of written assignments that you have to submit? 📝 
 ### *HandReacting* is the PERFECT solution to all your problems. It converts typed documents into handwritten ones 🖋, saving you a hella lotta time. ⏳
 
-<br >
+<br ><br ><br >
 
 
 <p align="center">
-<img alt="handreacting_image" src="./src/media/read.png" width="250px" />
+<img alt="handreacting_image" src="./src/media/read.svg" width="250px" />
 </p>
 
 
+<br ><br ><br >
+
+#### You can also thank me for making your life easier by giving a ⭐
+### Thank You!
