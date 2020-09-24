@@ -5,6 +5,7 @@ import FontConverter from './Components/FontConverter/FontConverter';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Info from './Components/Info/Info';
+import TesseractScan from './Components/TesseractScan/TesseractScan';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Info />
         <FontConverter />
+        <TesseractScan />
         <Footer />
     </div>
   );

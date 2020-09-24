@@ -4,6 +4,7 @@
 .fontStyler {
     display: flex;
     margin-top: 4rem;
+    margin-bottom: 2rem;
     justify-content: space-around;
 }
 
