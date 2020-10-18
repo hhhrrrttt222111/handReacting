@@ -8,6 +8,7 @@
 }
 
 .textInfo {
+    max-width: 850px;
     display: flex;
     margin: 4rem;
 }
@@ -18,6 +19,8 @@
 
 .textLeft > img {
     width: 400px;
+    display: block;
+    margin: auto;
 }
 
 .textRight {
