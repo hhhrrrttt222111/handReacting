@@ -8,6 +8,7 @@
 }
 
 .footer_container {
+    max-width: 850px;
     margin: 4rem;
     display: flex;
     justify-content: center;
@@ -30,7 +31,8 @@
 }
 
 .footer_right > img{
-    width: 200px;
+    display: block;
+    width: 250px;
 }
 
 .footer_left > p > a {
