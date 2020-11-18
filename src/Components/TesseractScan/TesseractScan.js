@@ -137,8 +137,6 @@ function TesseractScan() {
                         <h3 className="helpText"><RiQuillPenLine/> Click the SCAN Button to extract the text</h3>
                         <h3 className="helpText"><RiQuillPenLine/> This might take a while depending on the amount of text</h3>
                         <h3 className="helpText"><RiQuillPenLine/> Click the copy icon <FileCopyIcon /> to copy the text to clipboard</h3>
-                    
-
                     </div>
                     
                     
