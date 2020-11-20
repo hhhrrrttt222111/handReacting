@@ -18,5 +18,5 @@
 
 <br ><br ><br >
 
-#### You can also thank me for making your life easier by giving a ⭐
+#### HandReacting is a project made with React JS For any suggestions or bug reports, raise an issue. And yes, you can also thank me for making your life easier by giving a ⭐ for the HandReacting repository
 ### Thank You!
