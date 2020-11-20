@@ -18,9 +18,20 @@
 ## Features
 
  * ### Convert Text to almost 34 Handwritten fonts
- 
- <p align="center">
- <img src="./src/media/main.png" alt="" width="300px"/>
+<p align="center">
+ <img src="./src/media/main.PNG" alt=""/>
+</p>
+<br> 
+
+ * ### Extract Text from Images before converting to various fonts
+<p align="center">
+ <img src="./src/media/extract.PNG" alt=""/>
+</p>
+<br> 
+
+ * ### Convert speech to text
+<p align="center">
+ <img src="./src/media/voice.PNG" alt=""/>
 </p>
 
 <br ><br ><br >
