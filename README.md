@@ -15,6 +15,13 @@
 <img alt="handreacting_image" src="./src/media/read.svg" width="250px" />
 </p>
 
+## Features
+
+ * ### Convert Text to almost 34 Handwritten fonts
+ 
+ <p align="center">
+ <img src="./src/media/main.png" alt="" width="300px"/>
+</p>
 
 <br ><br ><br >
 
