@@ -10,7 +10,6 @@
 # HandReacting
 
 [![GitHub stars](https://img.shields.io/github/stars/hhhrrrttt222111/handReacting?color=ff69b4&style=flatsquare)](https://github.com/hhhrrrttt222111/handReacting/stargazers)
-
 [![GitHub forks](https://img.shields.io/github/forks/hhhrrrttt222111/handReacting?color=blueviolet&style=flatsquare)](https://github.com/hhhrrrttt222111/handReacting/network)
 
   
