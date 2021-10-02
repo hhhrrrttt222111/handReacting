@@ -33,6 +33,7 @@ Are you tired and fed up of the multitude of written assignments that you have t
 
 ## About the Project
 HandReacting is an app which allows the user to generate handwritten text in the form of a downloadable image from the input given. It can be used by students to generate their assignments so that they don't have to go through the hassle of writing down everything physically.
+
 The project has been made using React.
 
 ## Prerequisites
@@ -101,7 +102,13 @@ Open [http://localhost:3000](http://localhost:3000/) with your browser to see th
 
 ## Contributing
 
--   Refer the  [CONTRIBUTING.md]()  file for the guidelines for contributing to the project.  
+-   Refer the  [CONTRIBUTING.md]()  file for the guidelines for contributing to the project.
+
+## Resources
+- If you are new to Git - Git & Github for Beginners
+- For a more detailed understanding of the git flow - Git Workflow Explained
+- Before making changes, refer - CONTRIBUTING.md
+- Writing good commit messages - 5 Useful Tips For A Better Commit Message 
 
 #### HandReacting is a project made with React JS For any suggestions or bug reports, raise an issue. And yes, you can also thank me for making your life easier by giving a ⭐ for the HandReacting repository
 
