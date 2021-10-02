@@ -1,3 +1,5 @@
+# handReacting
+
 <p align="center">
 <img alt="handreacting_logo" src="./src/media/mainlogo.png" width="250px" />
 </p>
