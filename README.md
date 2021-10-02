@@ -106,6 +106,7 @@ Open [http://localhost:3000](http://localhost:3000/) with your browser to see th
 
 ## Notes
 HandReacting is a project made with React JS. 
+
 **For any suggestions or bug reports, refer [CONTRIBUTING.md]() and raise an issue.** 
 
 And yes, you can also thank me for making your life easier by giving a ⭐ for the HandReacting repository
