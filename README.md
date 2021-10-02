@@ -102,12 +102,12 @@ Open [http://localhost:3000](http://localhost:3000/) with your browser to see th
 
 ## Contributing
 
--   Refer the  [CONTRIBUTING.md]()  file for the guidelines for contributing to the project.
+-   Refer the [CONTRIBUTING.md](https://github.com/hhhrrrttt222111/handReacting/blob/master/CONTRIBUTING.md) file for the guidelines for contributing to the project.
 
 ## Notes
 HandReacting is a project made with React JS. 
 
-**For any suggestions or bug reports, refer [CONTRIBUTING.md]() and raise an issue.** 
+**For any suggestions or bug reports, refer [CONTRIBUTING.md](https://github.com/hhhrrrttt222111/handReacting/blob/master/CONTRIBUTING.md) and raise an issue.** 
 
 And yes, you can also thank me for making your life easier by giving a ⭐ for the HandReacting repository
 
@@ -115,7 +115,7 @@ And yes, you can also thank me for making your life easier by giving a ⭐ for t
 
 - If you are new to Git - [Git & Github for Beginners](https://www.youtube.com/watch?v=SWYqp7iY_Tc)
 - For a more detailed understanding of the git flow - [Git Workflow Explained](https://medium.com/@swinkler/git-workflow-explained-a-step-by-step-guide-83c1c9247f03)
-- **Before making changes, refer - [CONTRIBUTING.md](https://github.com/Exter-dg/CovID/blob/master/CONTRIBUTING.md)**
+- **Before making changes, refer - [CONTRIBUTING.md](https://github.com/hhhrrrttt222111/handReacting/blob/master/CONTRIBUTING.md)**
 - Writing good commit messages - [5 Useful Tips For A Better Commit Message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message)
 
 
