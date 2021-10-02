@@ -37,9 +37,9 @@
 .info_about > p {
     flex: 0.5;
     font-size: 23px;
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-left: 2rem;
-    padding-right: 9rem;
+    padding-right: 7rem;
     font-weight: 100;
     word-spacing: 2px;
     font-family: 'Lobster Two', cursive;
@@ -50,35 +50,42 @@
     width: 400px;
 }
 
+@media screen and (max-width: 1400px) {
+    .info_about > p {
+        padding-right: 3rem;
+    }
+}
 
 @media screen and (max-width: 992px) {
     .info {
         margin: 1rem;
+        display: flex;
+        justify-content: center;
     }
     .info_image {
         display: none;
     }
-    
     .info_about  {
         flex: 1;
+        max-width: 75%;
+    }
+    .info_about > p {
+        padding: 2rem 0;
+        text-align: justify;
+    }
+    .info_about > h3 {
+        padding-left:0;
     }
 
   }
 
   
   @media screen and (max-width: 600px) {
-    .info {
-        margin: 1rem;
-    }
-    .info_image {
-        display: none;
-    }
-    
     .info_about  {
-        flex: 1;
+        max-width: 95%;
     }
     .info_about > p {
         font-size: 18px;
-        padding: 1.5rem;
+        padding: 1.5rem 0;
     }
   }

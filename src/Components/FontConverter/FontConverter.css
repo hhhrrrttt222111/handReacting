@@ -3,17 +3,20 @@
 
 .fontStyler {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 4rem;
     margin-bottom: 2rem;
     justify-content: space-around;
 }
 
 .input_container {
+    margin:1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
+
 .paper {
     width: 460px;
     height: 590px;
@@ -28,6 +31,7 @@
     overflow: hidden;   
     background-image: linear-gradient(to right, #EDE574 0%, #E1F5C4 51%, #EDE574 100%) !important;
 }
+
 textarea {
     font-size: 18px;
     outline: none;
@@ -40,21 +44,22 @@ textarea {
 .paper_input::-webkit-scrollbar {
     display: none;
 }
+
 textarea::-webkit-scrollbar {
     display: none;
 }
+
 .paper_input, textarea {
     -ms-overflow-style: none;  
     scrollbar-width: none; 
 }
-
 
 .output_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    margin: 1rem;
 }
 
 .output_text {
@@ -63,8 +68,6 @@ textarea::-webkit-scrollbar {
     position: relative;
     left: 2rem;
 }
-
-
 
 .font_selector {
     display: flex;
@@ -100,7 +103,11 @@ textarea::-webkit-scrollbar {
     margin-top: 2rem;
 }
 
-
+@media screen and (max-width: 1200px){
+    .font_selector {
+        margin: 1.8rem 2.2rem;
+    }
+}
 
 @media screen and (max-width: 992px) {
     .fontStyler {
@@ -114,18 +121,8 @@ textarea::-webkit-scrollbar {
     }
 
   }
-
   
   @media screen and (max-width: 600px) {
-    .fontStyler {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
-    }
-    .input_container {
-        display: flex;
-        flex: 1;
-    }
     .paper {
         width: 90%;
         height: 590px;
