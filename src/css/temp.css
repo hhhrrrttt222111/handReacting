@@ -1,0 +1,37 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+
+
+body {
+    background-color: #ccff99;
+}
+
+.heading {
+    padding-bottom: 40px;
+}
+
+.social a {
+    font-size: 2em;
+    padding: 3rem;
+}
+
+.fa-instagram {
+    color: #ff0066;
+}
+.fa-facebook {
+    color: #0039e6;
+}
+
+.fa-instagram:hover, .fa-facebook:hover, .fa-twitter:hover {
+    color: #d5d5d5;;
+}
+
+.btn {
+    background-color: chartreuse;
+}
+
+@media (min-width: 576px) {
+    .gallery-block .transform-on-hover:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.15) !important;
+    }
+}
